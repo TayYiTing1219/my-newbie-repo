@@ -1,0 +1,679 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #c6c6c6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Menu Button Styling */
+.menu-button {
+    font-size: 1.8rem; /* Relative font size */
+    background: none; /* No background */
+    outline: 2px solid gray; /* Outline */
+    outline-offset: 2px;
+    border-radius: 5px;
+    border: none;
+    color: rgb(255, 255, 255); /* Button text color */
+    cursor: pointer;
+    padding: 5px;
+    position: fixed; /* Stays in the same position even when scrolling */
+    top: 20px; /* Distance from the top edge */
+    right: 30px; /* Distance from the left edge */
+    z-index: 100; /* Ensures it stays on top of other elements */
+}
+
+/* Dropdown Menu Styling */
+nav {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 70px; /* Directly below the menu button */
+    right: 0;
+    background-color: #969696;
+    border-radius: 2%;
+    width: 200px;
+    padding: 10px 0;
+    z-index: 10; /* Ensure it's above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: fixed; /* Stays in the same position even when scrolling */
+}
+
+nav.show-menu {
+    display: block; /* Show dropdown menu when class is added */
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.265);
+}
+
+nav a:hover {
+    background-color: #8a8a8a;
+}
+
+main {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+/* Set the background image to be dynamic */
+main img {
+    width: 100%; /* Makes the image take up the full width */
+    height: auto; /* Adjusts height according to the image's aspect ratio */
+    object-fit: cover; /* Ensures the image covers the entire area without stretching */
+}
+
+/* Ensure content above image is visible */
+h2 {
+    position: absolute;
+    z-index: 1; /* Makes sure text is above the image */
+    color: white;
+    text-shadow: 1px 1px 2px rgb(72, 72, 72); /* Text shadow for better visibility */
+    top: 15vw;  /* Keeps <h2> near the top */
+    left: 50%;
+    margin-bottom: 1.5vw;
+    margin-top: 1vw;
+    text-align: center;
+    transform: translate(-50%, -50%); /* Centers text */
+    font-size: 6vw; /* Responsive font size based on viewport width */
+}
+
+h3 {
+    position: absolute;
+    z-index: 1; /* Makes sure text is above the image */
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px rgb(72, 72, 72); /* Text shadow for better visibility */
+    top: 21vw; /* Move the <h3> lower than <h2> */
+    left: 50%;
+    margin-bottom: 1.5vw;
+    margin-top: 2.5vw;
+    text-align: center;
+    transform: translate(-50%, -50%); /* Centers text */
+    font-size: 2vw; /* Responsive font size based on viewport width */
+}
+
+footer {
+    background:  #c6c6c6;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Home Page */
+/* Container for flex items */
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #c6c6c6;
+    flex-wrap: wrap; /*wrap flex items to a new row if not enough space */
+}
+
+/* Flex Item Styling */
+.flex-item {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-img img {
+    max-width: 100%;
+}
+
+/* Flex Item Title (h4) Styling */
+.flex-info h4 {
+    font-size: 1.5rem; /* Set the same font size for all titles */
+    color: #333; /* You can change the color to match the style of the first item */
+    text-align: center; /* Align the title text */
+}
+
+/* Flex Item Paragraph (p) Styling */
+.flex-info p {
+    font-size: 1rem; /* Make sure paragraph text is consistent */
+    line-height: 1.5;
+    color: #555; /* Change color to match the design */
+    text-align: center; /* Align the paragraph text */
+    margin-top: 10px; /* Adjust margin for better spacing */
+}
+
+/* About Page */
+/* Container for flex items */
+.aboutContainer {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+    background-color: #c6c6c6;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Flex Item Styling */
+.aboutFlex-item {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: row; /* Ensures children elements are aligned side by side */
+    gap: 80px; /* Space between info and image */
+}
+
+.aboutFlex-img img {
+    max-width: 180%;
+    padding: 8%;
+    margin-top: 150px;
+}
+
+/* Flex Item Title (h4) Styling */
+.aboutFlex-info h4 {
+    font-size: 2rem; /* Set the same font size for all titles */
+    color: #333; /* You can change the color to match the style of the first item */
+    text-align: center; /* Align the title text */
+}
+
+/* Flex Item Paragraph (p) Styling */
+.aboutFlex-info p {
+    font-size: 1rem; /* Make sure paragraph text is consistent */
+    line-height: 1.5;
+    color: #555; /* Change color to match the design */
+    text-align: center; /* Align the paragraph text */
+    margin-top: 10px; /* Adjust margin for better spacing */
+}
+
+/* Container for flex items */
+.aboutContainer0 {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    background-color: #c6c6c6;
+    flex-wrap: wrap; /*wrap flex items to a new row if not enough space */
+}
+
+/* Flex Item Styling */
+.aboutFlex-item0 {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutFlex-img0 img {
+    max-width: 100%;
+}
+
+.aboutContainer1 {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    background-color: #c6c6c6;
+    flex-wrap: wrap; /*wrap flex items to a new row if not enough space */
+}
+
+/* Flex Item Styling */
+.aboutFlex-item1 {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: row; /* Ensures children elements are aligned side by side */
+}
+
+.aboutFlex-info1 {
+    flex-grow: 2; /* Takes twice as much space as the sibling */
+    flex-basis: 110%; /* Base size is 60% of the container */
+}
+
+/* Flex Item Paragraph (p) Styling */
+.aboutFlex-info1 p {
+    font-size: 1rem; /* Make sure paragraph text is consistent */
+    line-height: 1.5;
+    color: #555; /* Change color to match the design */
+    margin-top: 10px; /* Adjust margin for better spacing */
+}
+
+.aboutFlex-info1 ul {
+    font-size: 1rem; /* Make sure paragraph text is consistent */
+    line-height: 1.5;
+    color: #555; /* Change color to match the design */
+    margin-top: 10px; /* Adjust margin for better spacing */
+}
+
+.aboutFlex-img1 img {
+    max-width: 140%;
+    max-height: 40%;
+    padding: 2%;
+}
+
+
+/* Product Page */
+/* Container for flex items */
+.productContainer {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    background-color: #c6c6c6;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Flex Item Styling */
+.productFlex-item {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.productFlex-img {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack images on top of each other */
+    align-items: center; /* Center images horizontally */
+    justify-content: center; /* Center images vertically (if needed) */
+}
+
+.productFlex-img img {
+    width: 100%; /* Ensures all images fill the width of their container */
+    height: auto; /* Maintains the aspect ratio */
+    max-width: 300px; /* Optional: Set a maximum width if needed */
+    display: block; /* Removes extra space below the image caused by inline display */
+    object-fit: cover; /* Ensures images fit neatly within the given width */
+}
+
+.productFlex-info {
+    flex: 1; /* Adjust this to control how much space the text occupies relative to the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically */
+}
+
+/* Flex Item Title (h4) Styling */
+.productFlex-info h4 {
+    font-size: 1.5rem; /* Set the same font size for all titles */
+    color: #333; /* You can change the color to match the style of the first item */
+    text-align: center; /* Align the title text */
+}
+
+/* Flex Item Paragraph (p) Styling */
+.productFlex-info p {
+    font-size: 1rem; /* Make sure paragraph text is consistent */
+    line-height: 1.5;
+    color: #555; /* Change color to match the design */
+    text-align: center; /* Align the paragraph text */
+    margin-top: 10px; /* Adjust margin for better spacing */
+}
+
+
+/* Services Page */
+/* Container for flex items */
+.servicesContainer {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin: auto;
+    background-color: #c6c6c6;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Flex Item Styling */
+.servicesFlex-item {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.servicesFlex-img {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack images on top of each other */
+    align-items: center; /* Center images horizontally */
+    justify-content: center; /* Center images vertically (if needed) */
+}
+
+.servicesFlex-img img {
+    width: 100%; /* Ensures all images fill the width of their container */
+    height: auto; /* Maintains the aspect ratio */
+    max-width: 300px; /* Optional: Set a maximum width if needed */
+    display: block; /* Removes extra space below the image caused by inline display */
+    object-fit: cover; /* Ensures images fit neatly within the given width */
+}
+
+.servicesFlex-info {
+    flex: 1; /* Adjust this to control how much space the text occupies relative to the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically */
+}
+
+/* Flex Item Title (h4) Styling */
+.servicesFlex-info h4 {
+    font-size: 1.5rem; /* Set the same font size for all titles */
+    color: #333; /* You can change the color to match the style of the first item */
+    text-align: center; /* Align the title text */
+}
+
+/* Flex Item Paragraph (p) Styling */
+.servicesFlex-info p {
+    font-size: 1rem; /* Make sure paragraph text is consistent */
+    line-height: 1.5;
+    color: #555; /* Change color to match the design */
+    text-align: center; /* Align the paragraph text */
+    margin-top: 10px; /* Adjust margin for better spacing */
+}
+
+/* Contact Page */
+/* Center the form and make it larger */
+.contactContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    align-items: center; /* Center the form vertically */
+    height: 100vh; /* Take full viewport height */
+    background-color: #c6c6c6; /* Optional: Different background for better visibility */
+}
+
+/* Flex Item Styling */
+.contactFlex-item {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.contactFlex-info {
+    flex: 1; /* Adjust this to control how much space the text occupies relative to the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically */
+}
+
+/* Flex Item Title (h4) Styling */
+.contactFlex-info h4 {
+    font-size: 1.5rem; /* Set the same font size for all titles */
+    color: #333; /* You can change the color to match the style of the first item */
+    text-align: center; /* Align the title text */
+}
+
+/* Flex Item Paragraph (p) Styling */
+.contactFlex-info p {
+    font-size: 1rem; /* Make sure paragraph text is consistent */
+    line-height: 1.5;
+    color: #555; /* Change color to match the design */
+    text-align: center; /* Align the paragraph text */
+    margin-top: 10px; /* Adjust margin for better spacing */
+}
+
+/* Contact Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px; /* Restrict maximum width */
+    width: 150%; /* Allow form to stretch to the max width */
+    margin: 0 auto; /* Center form horizontally */
+    background-color: #c6c6c6; /* Slightly lighter background for form */
+    padding: 40px; /* Increase padding for a spacious look */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly darker shadow */
+}
+
+form input, form textarea {
+    padding: 12px; /* Increase padding for better usability */
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 15px 18px; /* Slightly larger button */
+    background-color: #4CAF50;
+    color: white ;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem; /* Slightly larger font */
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.popup button {
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #007B8F;
+}
+
+
+
+/* Responsive Styling for Mobile Devices */
+@media (max-width: 768px) {
+    /* Adjusting the menu button */
+    .menu-button {
+        position: fixed;
+        font-size: 1.5rem;
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Dropdown menu adjustment for smaller screens */
+    nav {
+        width: 100%;
+        top: 60px;
+    }
+
+    nav a {
+        padding: 12px;
+        font-size: 1.2rem;
+    }
+    
+    /* Menu Button Styling */
+    .menu-button {
+        font-size: 1.5rem; /* Relative font size */
+        background: none; /* No background */
+        outline: 2px solid gray; /* Outline */
+        outline-offset: 2px;
+        border-radius: 5px;
+        border: none;
+        color: rgb(255, 255, 255); /* Button text color */
+        cursor: pointer;
+        padding: 5px;
+        position: fixed; /* Stays in the same position even when scrolling */
+        top: 20px; /* Distance from the top edge */
+        right: 30px; /* Distance from the left edge */
+        z-index: 100; /* Ensures it stays on top of other elements */
+    }
+
+    /* Dropdown Menu Styling */
+    nav {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 70px; /* Directly below the menu button */
+        right: 0;
+        background-color: #969696;
+        width: 200px;
+        padding: 10px 0;
+        border-radius: 2%;
+        z-index: 10; /* Ensure it's above other elements */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        position: fixed; /* Stays in the same position even when scrolling */
+    }
+
+    nav.show-menu {
+        display: block; /* Show dropdown menu when class is added */
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.265);
+    }
+
+    nav a:hover {
+        background-color: #8a8a8a;
+    }
+
+    /* Main container, ensuring it takes full width on mobile */
+    main {
+        position: relative;
+        max-width: 100%;
+        width: 100%;
+        height: 80%;
+        overflow: hidden;
+    }
+
+    main img {
+        width: 100%;
+        height: auto; 
+        object-fit: cover;
+    }
+
+    /* Flex items adjust to full width */
+    .flex-item, .aboutFlex-item, .aboutFlex-item0, .aboutFlex-item1, .productFlex-item, .servicesFlex-item, .contactFlex-item {
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust Font Sizes */
+    h2 {
+        position: absolute;
+        z-index: 1; /* Makes sure text is above the image */
+        color: white;
+        text-shadow: 1px 1px 2px rgb(72, 72, 72); /* Text shadow for better visibility */
+        top: 15vw;  /* Keeps <h2> near the top */
+        left: 50%;
+        margin-bottom: 1.5vw;
+        margin-top: 1vw;
+        text-align: center;
+        transform: translate(-50%, -50%); /* Centers text */
+        font-size: 6vw; /* Responsive font size based on viewport width */
+    }
+    
+    h3 {
+        position: absolute;
+        z-index: 1; /* Makes sure text is above the image */
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 1px 2px rgb(72, 72, 72); /* Text shadow for better visibility */
+        top: 21vw; /* Move the <h3> lower than <h2> */
+        left: 50%;
+        margin-bottom: 1.5vw;
+        margin-top: 2.5vw;
+        text-align: center;
+        transform: translate(-50%, -50%); /* Centers text */
+        font-size: 2vw; /* Responsive font size based on viewport width */
+    }
+
+    /* Contact form takes full width */
+    form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    form input, form textarea {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    form button {
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+
+    /* Adjust the popup size */
+    .popup-content {
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    /* Adjust footer */
+    footer {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+
+/* Further media query for very small devices */
+@media (max-width: 480px) {
+    /* Adjust the menu button size further */
+    .menu-button {
+        font-size: 1.2rem;
+        top: 10px;
+        right: 10px;
+    }
+
+    /* Full width for dropdown menu */
+    nav {
+        width: 100%;
+    }
+
+    form input, form textarea {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    form button {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+
+    .popup-content {
+        padding: 15px;
+    }
+
+    /* Ensure content fits mobile screens */
+    footer {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
