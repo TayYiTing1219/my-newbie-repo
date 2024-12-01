@@ -1,4 +1,4 @@
-# my-newbie-repo
+# IDAssignment1
 ID Assignment 1
 It is a website of a company called Yi Tech. Yi Tech is a leading provider of customized RF (radio frequency) connectors, filters, and cable assemblies. They offer a wide range of electronic and electrical components, including connectors, tools, and power generation equipment. Specializing in both component distribution and project kitting services, Yi Tech serves industries requiring high-quality RF and microwave products. With a focus on delivering tailored solutions, they also provide support for diesel, gas, and HFO generator systems, including electrical design consultations and servicing.
 
